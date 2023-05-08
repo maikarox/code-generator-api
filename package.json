@@ -21,7 +21,8 @@
     "nodemon": "^2.0.22",
     "npm": "^9.6.6",
     "ts-node": "^10.9.1",
-    "tslib": "^2.5.0"
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.4"
   },
   "dependencies": {
     "cors": "^2.8.5",
