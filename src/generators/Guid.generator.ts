@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import { CodeGenerator } from '../interfaces/code-generator.interface';
+import { TCodeGenerator } from '../interfaces/codeGenerator.interface';
 
-export default class GuidGenerator implements CodeGenerator {
+export default class GuidGenerator implements TCodeGenerator {
   generate(): string {
     return uuidv4();
   }

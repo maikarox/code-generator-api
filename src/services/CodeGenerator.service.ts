@@ -1,13 +1,13 @@
 import { Container, Service } from "typedi";
 
-import { ConfigReader, CodeConfig, CodeGenerator } from "../interfaces";
+import { TConfigReader, TCodeConfig, TCodeGenerator } from "../interfaces";
 import { capitalize } from "../utils";
 
 @Service()
-export default class CodeGeneratorService implements CodeGenerator<string[]> {
-  private configReader: ConfigReader<CodeConfig>;
-  private generator: CodeGenerator;
-  private config: CodeConfig;
+export default class CodeGeneratorService implements TCodeGenerator<string[]> {
+  private configReader: TConfigReader<TCodeConfig>;
+  private generator: TCodeGenerator;
+  private config: TCodeConfig;
 
   constructor() {
     this.configReader = Container.get('ConfigReaderService');
