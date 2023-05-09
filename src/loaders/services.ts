@@ -5,7 +5,7 @@ import CodeConfigReaderService from '../services/CodeConfigReader.service';
 import CodeGeneratorService from '../services/CodeGenerator.service';
 
 export default () => {
-  Container.set("ConfigReaderService", new CodeConfigReaderService());
-  Container.set("CodeGeneratorService", new CodeGeneratorService());
-  Container.set("CodeService", new CodeService());
+  Container.set('ConfigReaderService', new CodeConfigReaderService());
+  Container.set('CodeGeneratorService', new CodeGeneratorService());
+  Container.set('CodeService', new CodeService());
 };

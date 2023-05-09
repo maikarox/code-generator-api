@@ -1,11 +1,11 @@
 import fs from 'fs';
 
-import { TConfigReader, TCodeConfig } from "../../interfaces";
+import { TConfigReader, TCodeConfig } from '../../interfaces';
 
 export default class LocalConfiguration implements TConfigReader<TCodeConfig> {
   private readonly fileName: string;
 
-  constructor(){
+  constructor() {
     this.fileName = process.env.LOCAL_CONFIG_FILE;
   }
 

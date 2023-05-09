@@ -1,4 +1,4 @@
-import { TCodeConfig } from "./codeConfig.interface";
+import { TCodeConfig } from './codeConfig.interface';
 
 export type TGeneratorOptions = Pick<TCodeConfig, 'length'>;
 

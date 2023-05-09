@@ -1,5 +1,5 @@
-import Container, { Service } from "typedi";
-import { ICode, TCodeGenerator } from "../interfaces";
+import Container, { Service } from 'typedi';
+import { ICode, TCodeGenerator } from '../interfaces';
 
 @Service()
 export default class CodeService implements ICode {

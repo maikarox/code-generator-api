@@ -1,3 +1,3 @@
 export interface ICode {
-  getCodes: () => Promise<string[]>
+  getCodes: () => Promise<string[]>;
 }

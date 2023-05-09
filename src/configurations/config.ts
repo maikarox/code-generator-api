@@ -4,7 +4,7 @@ dotenv.config();
 
 export const config = {
   port: process.env.PORT,
-  configReader:{
+  configReader: {
     configType: process.env.CONFIG_TYPE,
-  }
+  },
 };
