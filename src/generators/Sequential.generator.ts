@@ -1,4 +1,4 @@
-import { TCodeGenerator } from '../interfaces';
+import { TCodeGenerator, TGeneratorOptions } from '../interfaces';
 
 export default class SecuentialGenerator implements TCodeGenerator {
   private currentCode: number;
@@ -7,8 +7,8 @@ export default class SecuentialGenerator implements TCodeGenerator {
     this.currentCode = 0;
   }
 
-  public generate(): string {
-    const code = this.pad(this.currentCode, 6);
+  public generate({ length }: TGeneratorOptions): string {
+    const code = this.pad(this.currentCode, length);
     this.currentCode++;
 
     return code;

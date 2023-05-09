@@ -20,10 +20,11 @@ export default class CodeGeneratorService implements TCodeGenerator<Promise<stri
   }
 
   public async generate(): Promise<string[]> {
+    const { length } = this.config;
     const codes = [];
 
     for (let i = 0; i < this.config.quantity; i++) {
-      codes.push(this.generator.generate());
+      codes.push(this.generator.generate({ length }));
     };
 
     return codes;
