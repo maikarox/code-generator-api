@@ -4,20 +4,22 @@ import { TConfigReader, TCodeConfig, TCodeGenerator } from "../interfaces";
 import { capitalize } from "../utils";
 
 @Service()
-export default class CodeGeneratorService implements TCodeGenerator<string[]> {
+export default class CodeGeneratorService implements TCodeGenerator<Promise<string[]>> {
   private configReader: TConfigReader<TCodeConfig>;
   private generator: TCodeGenerator;
   private config: TCodeConfig;
 
   constructor() {
     this.configReader = Container.get('ConfigReaderService');
-    this.configReader.getConfig().then((configuration) => {
-      this.config = configuration;
-      this.generator = Container.get(`${capitalize(this.config.algorithm)}Generator`);
-    });
+    this.initializeConfig();
   }
 
-  public generate(): string[] {
+  private async initializeConfig() {
+    this.config = await this.configReader.getConfig();
+    this.generator = Container.get(`${capitalize(this.config.algorithm)}Generator`);
+  }
+
+  public async generate(): Promise<string[]> {
     const codes = [];
 
     for (let i = 0; i < this.config.quantity; i++) {
