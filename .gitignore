@@ -1,6 +1,7 @@
 # Node.js files
 node_modules/
 npm-debug.log*
+dist
 
 # VSCode files
 .vscode/
@@ -9,3 +10,6 @@ npm-debug.log*
 .DS_Store
 .AppleDouble
 .LSOverride
+
+# environments
+.env
