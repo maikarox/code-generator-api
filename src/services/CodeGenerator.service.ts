@@ -1,15 +1,15 @@
 import { Container, Service } from 'typedi';
 
-import { TConfigReader, TCodeConfig, TCodeGenerator } from '../interfaces';
+import { IConfigReader, ICodeConfig, ICodeGenerator } from '../interfaces';
 import { capitalize } from '../utils';
 
 @Service()
 export default class CodeGeneratorService
-  implements TCodeGenerator<Promise<string[]>>
+  implements ICodeGenerator<Promise<string[]>>
 {
-  private configReader: TConfigReader<TCodeConfig>;
-  private generator: TCodeGenerator;
-  private config: TCodeConfig;
+  private configReader: IConfigReader<ICodeConfig>;
+  private generator: ICodeGenerator;
+  private config: ICodeConfig;
 
   constructor() {
     this.configReader = Container.get('ConfigReaderService');
@@ -19,7 +19,7 @@ export default class CodeGeneratorService
   private async initializeConfig() {
     this.config = await this.configReader.getConfig();
     this.generator = Container.get(
-      `${capitalize(this.config.algorithm)}Generator`
+      `${capitalize(this.config.algorithm)}Generator`,
     );
   }
 

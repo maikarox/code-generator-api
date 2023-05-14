@@ -1,7 +1,7 @@
-import { TCodeConfig } from './codeConfig.interface';
+import { ICodeConfig } from './codeConfig.interface';
 
-export type TGeneratorOptions = Pick<TCodeConfig, 'length'>;
+export type TGeneratorOptions = Pick<ICodeConfig, 'length'>;
 
-export interface TCodeGenerator<TReturnType = string> {
+export interface ICodeGenerator<TReturnType = string> {
   generate: (options?: TGeneratorOptions) => TReturnType;
 }

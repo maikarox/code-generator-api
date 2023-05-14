@@ -1,3 +1,3 @@
-export interface TConfigReader<TConfig> {
+export interface IConfigReader<TConfig> {
   getConfig(): Promise<TConfig>;
 }

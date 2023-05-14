@@ -1,9 +1,9 @@
 import Container, { Service } from 'typedi';
-import { ICode, TCodeGenerator } from '../interfaces';
+import { ICode, ICodeGenerator } from '../interfaces';
 
 @Service()
 export default class CodeService implements ICode {
-  private codeGenerator: TCodeGenerator<string[]>;
+  private codeGenerator: ICodeGenerator<string[]>;
 
   constructor() {
     this.codeGenerator = Container.get('CodeGeneratorService');

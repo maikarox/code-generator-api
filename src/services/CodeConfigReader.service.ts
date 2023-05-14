@@ -1,6 +1,6 @@
 import { Container, Service } from 'typedi';
 
-import { TConfigReader, TCodeConfig } from '../interfaces';
+import { IConfigReader, ICodeConfig } from '../interfaces';
 import { config } from '../configurations';
 import { capitalize } from '../utils';
 
@@ -10,17 +10,17 @@ const {
 
 @Service()
 export default class CodeConfigReaderService
-  implements TConfigReader<TCodeConfig>
+  implements IConfigReader<ICodeConfig>
 {
-  private configuration: TConfigReader<TCodeConfig>;
+  private configuration: IConfigReader<ICodeConfig>;
 
   constructor() {
     this.configuration = Container.get(
-      `${capitalize(configType)}Configuration`
+      `${capitalize(configType)}Configuration`,
     );
   }
 
-  async getConfig(): Promise<TCodeConfig> {
+  async getConfig(): Promise<ICodeConfig> {
     return await this.configuration.getConfig();
   }
 }

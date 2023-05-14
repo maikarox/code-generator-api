@@ -1,9 +1,9 @@
-import { TConfigReader, TCodeConfig } from '../../interfaces';
+import { IConfigReader, ICodeConfig } from '../../interfaces';
 
-export default class RemoteConfiguration implements TConfigReader<TCodeConfig> {
+export default class RemoteConfiguration implements IConfigReader<ICodeConfig> {
   constructor() {}
 
-  getConfig(): Promise<TCodeConfig> {
+  getConfig(): Promise<ICodeConfig> {
     // TODO: to be implemented.
     throw new Error('Method not implemented.');
   }

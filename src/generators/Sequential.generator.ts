@@ -1,6 +1,6 @@
-import { TCodeGenerator, TGeneratorOptions } from '../interfaces';
+import { ICodeGenerator, TGeneratorOptions } from '../interfaces';
 
-export default class SecuentialGenerator implements TCodeGenerator {
+export default class SecuentialGenerator implements ICodeGenerator {
   private currentCode: number;
 
   constructor() {
