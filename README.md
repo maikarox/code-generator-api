@@ -10,7 +10,7 @@ Example config:
 {
   "quantity": 10,
   "algorithm": "hexadecimal",
-  "lenght": 12
+  "length": 12
 }
 ```
 
