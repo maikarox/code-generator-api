@@ -8,17 +8,9 @@ export default class SecuentialGenerator implements ICodeGenerator {
   }
 
   public generate({ length }: TGeneratorOptions): string {
-    const code = this.pad(this.currentCode, length);
+    const code = String(this.currentCode).padStart(length, '0');
     this.currentCode++;
 
     return code;
-  }
-
-  private pad(num: number, size: number): string {
-    let s = String(num);
-    while (s.length < size) {
-      s = '0' + s;
-    }
-    return s;
   }
 }
